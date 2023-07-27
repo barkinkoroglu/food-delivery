@@ -38,20 +38,30 @@ function Menu() {
           }}
         />
       )}
-      <div className="bg-red-500 text-white absolute left-0 right-0 top-24 h-[calc(100vh-6rem)] flex flex-col  items-center justify-center text-3xl gap-8 z-10">
-        {links.map((item, key) => (
-          <Link key={item.id} href={item.url}>
-            {' '}
-            {item.title}
-          </Link>
-        ))}
-        {!user ? (
-          <Link href="/login">Login</Link>
-        ) : (
-          <Link href="/orders">Orders</Link>
-        )}
-        <CartIcon />
-      </div>
+      {openMenu && (
+        <div className="bg-red-500 text-white absolute left-0 right-0 top-24 h-[calc(100vh-6rem)] flex flex-col  items-center justify-center text-3xl gap-8 z-10">
+          {links.map((item, key) => (
+            <Link
+              onClick={() => setOpenMenu(false)}
+              key={item.id}
+              href={item.url}
+            >
+              {' '}
+              {item.title}
+            </Link>
+          ))}
+          {!user ? (
+            <Link onClick={() => setOpenMenu(false)} href="/login">
+              Login
+            </Link>
+          ) : (
+            <Link onClick={() => setOpenMenu(false)} href="/orders">
+              Orders
+            </Link>
+          )}
+          <CartIcon />
+        </div>
+      )}
     </div>
   );
 }
