@@ -9,12 +9,12 @@ const MenuPage = () => {
         <Link
           href={`/menu/${category.slug}`}
           key={category.id}
-          className="w-full h-1/3 bg-cover p-8 md:h-1/2 relative"
+          className="w-full h-1/3 bg-cover p-6 sm:p-8 md:h-1/2 relative"
           style={{ backgroundImage: `url(${category.img})` }}
         >
           <div className={`text-${category.color} w-1/2`}>
             <h1 className="uppercase font-bold text-3xl">{category.title}</h1>
-            <p className="text-sm my-8">{category.desc}</p>
+            <p className="text-sm my-4  md:my-8">{category.desc}</p>
             <button
               className={`hidden 2xl:block absolute bottom-3  py-2 px-4 rounded-md bg-black text-white `}
             >
