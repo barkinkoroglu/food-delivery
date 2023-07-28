@@ -5,7 +5,7 @@ import CartIcon from './CartIcon';
 import Image from 'next/image';
 
 function Navbar() {
-  const user = false;
+  const user = true;
   return (
     <div className="h-12 text-red-500 p-4 flex justify-between items-center border-b-2 border-b-red-500 uppercase md:h-24 lg:px-20 xl:px-40">
       <div className="hidden md:flex gap-4 md:flex-1">
@@ -27,7 +27,7 @@ function Navbar() {
         {!user ? (
           <Link href="/login">Login</Link>
         ) : (
-          <Link href="/">Orders</Link>
+          <Link href="/orders">Orders</Link>
         )}
 
         <CartIcon />
