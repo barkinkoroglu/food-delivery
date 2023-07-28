@@ -24,7 +24,11 @@ function Navbar() {
           <Image src="/phone.png" alt="" width={20} height={20} />
           <span>14131234</span>
         </div>
-        {!user ? <Link href="/">Login</Link> : <Link href="/">Orders</Link>}
+        {!user ? (
+          <Link href="/login">Login</Link>
+        ) : (
+          <Link href="/">Orders</Link>
+        )}
 
         <CartIcon />
       </div>
